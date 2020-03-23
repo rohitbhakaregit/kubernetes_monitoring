@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: simple-fanout-example
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: foo.bar.com
+    http:
+      paths:
+        - path: /pod1
+          backend:
+            serviceName: service-pod1
+            servicePort: 90
+        - path: /pod2
+          backend:
+            serviceName: service-pod2
+            servicePort: 100
