@@ -1,16 +1,17 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: apache-server1
+  name: nginx-server1
   labels:
-    name: apache-server1
+    name: nginx-server1
 spec:
   containers:
-  - name: apache-server1
-    image: httpd
+  - name: nginx-server1
+    image: nginx
     resources:
       limits:
         memory: "128Mi"
         cpu: "500m"
     ports:
       - containerPort: 80
+
