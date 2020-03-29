@@ -16,3 +16,9 @@ spec:
           backend:
             serviceName: service-pod2
             servicePort: 100
+
+            # the ingress resouce wont work until and unless you have ingress controller 
+            # I have installed ingress controller using the helm package controller 
+
+            # helm install nginx stable/nginx-ingress
+            # helm repo update 
